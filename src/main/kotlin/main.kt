@@ -1,31 +1,43 @@
+import java.io.FileReader
+import java.io.IOException
 import java.lang.NumberFormatException
 import java.util.*
 
 fun main(args: Array<String>) {
 
-    var numbers = listOf(1,2,3,4,5)
+    var reader = FileReader("filename")
 
-    //for (i in 1 .. 10 step 2)
-    //for (i in 1 until  10)
-    for (i in numbers){
-        println(i)
+    try {
+        reader.read()
+    } catch (e: IOException){
+
+    } finally {
+
     }
 
-    var ages = TreeMap<String, Int>();
-    ages["Kevin"] = 55
-    ages["Sam"] = 24
-    ages["Alex"] = 24
-    ages["Harry"] = 26
-
-    for ((name, age) in ages){
-        println("$name is $age")
-    }
-
-    for((index, element) in numbers.withIndex()){
-        println("$element at $index")
-    }
-
-    var range = 'a'..'z'
+//    var numbers = listOf(1,2,3,4,5)
+//
+//    //for (i in 1 .. 10 step 2)
+//    //for (i in 1 until  10)
+//    for (i in numbers){
+//        println(i)
+//    }
+//
+//    var ages = TreeMap<String, Int>();
+//    ages["Kevin"] = 55
+//    ages["Sam"] = 24
+//    ages["Alex"] = 24
+//    ages["Harry"] = 26
+//
+//    for ((name, age) in ages){
+//        println("$name is $age")
+//    }
+//
+//    for((index, element) in numbers.withIndex()){
+//        println("$element at $index")
+//    }
+//
+//    var range = 'a'..'z'
 
 //    println("Hello, world")
 //    val q:Question = Question()
