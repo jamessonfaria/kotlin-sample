@@ -1,3 +1,4 @@
+@file:JvmName("DisplayFunctions")
 package br.com.jamesson.functions
 
 fun main(args: Array<String>) {
