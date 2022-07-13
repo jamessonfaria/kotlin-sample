@@ -1,7 +1,10 @@
+import java.lang.NumberFormatException
+
 fun main(args: Array<String>) {
     println("Hello, world")
     val q:Question = Question()
-    q.Answer  = "42"
+    //q.Answer  = "42"
+    q.Answer  = "Four"
    //.Question = ""
 
 
@@ -14,6 +17,14 @@ fun main(args: Array<String>) {
     println(message)
 
     q.printResult()
+
+    val number:Int? = try {
+        Integer.parseInt(q.Answer)
+    } catch (e: NumberFormatException){
+        null
+    }
+
+    println("Number is $number")
 }
 
 class Question(){
