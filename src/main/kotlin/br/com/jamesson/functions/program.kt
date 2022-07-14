@@ -3,8 +3,13 @@ package br.com.jamesson.functions
 
 fun main(args: Array<String>) {
     display("Hello, world")
-
     println(max(1,2))
+    log("Helloooooooo")
+}
+
+@JvmOverloads // realiza overload da classe kotlin no java
+fun log(message: String, logLevel: Int = 1){
+    println("$message - level: $logLevel")
 }
 
 fun display(message: String) : Boolean{
