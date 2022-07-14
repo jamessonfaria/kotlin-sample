@@ -5,6 +5,7 @@ fun main(args: Array<String>) {
     display("Hello, world")
     println(max(1,2))
     log("Helloooooooo")
+    log(logLevel = 2, message = "Hellloooo")
 }
 
 @JvmOverloads // realiza overload da classe kotlin no java
