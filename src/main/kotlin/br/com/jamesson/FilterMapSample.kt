@@ -30,5 +30,5 @@ fun main() {
 }
 
 class Meeting2(val id: Int, val title: String){
-
+    val people = listOf(Person("Sam"), Person("Alex"))
 }
