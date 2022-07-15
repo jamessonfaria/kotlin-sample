@@ -6,6 +6,10 @@ fun main() {
 
     val carlos = Student3("Carlos", "Silva", 2, "Vanessa")
     println(carlos.tutor)
+
+    Courses.initialize()
+    val curso = carlos.enrole("Kotlin Avancado")
+    print(curso)
 }
 
 abstract class PersonConstructor(var firstName: String, var lastName: String) {
@@ -23,6 +27,14 @@ class Student3(firstName: String, lastName: String, _id: Int, var tutor: String 
     init {
         id = _id
     //    tutor = ""
+    }
+
+    fun enrole(courseName: String) : Course? {
+        val course = Courses.allCourses
+            .filter { it.Title == courseName }
+            .firstOrNull()
+
+        return course
     }
 
 //    constructor(firstName: String, lastName: String, _id: Int, tutor: String) : this(firstName, lastName, _id) {
