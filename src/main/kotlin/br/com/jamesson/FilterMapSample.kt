@@ -37,6 +37,22 @@ fun main() {
         .map { println("map($it"); it.title }
     for (t in titlesSequence) println(t)
 
+    // SEQUENCE TERMINAL OPERATIONS - TERMINA ASSIM QUE SATISFAZ AS CONDICOES
+    // OTIMIZANDO O PROCESSO, COMO AS SEQUENCIAS SAO LAZY, PODEMOS ARMAZENAR
+    // A FUNCAO DE ALTA ORDEM E PASSAR ELA COMO PARAMETRO PARA UMA FUNCAO
+    // QUANDO FOR SER EXECUTAR
+    println("-----------------------------------------------------------")
+    val titlesSequenceTerminal = meetings
+        .asSequence()
+        .map { println("map($it"); it.title.uppercase() }
+        .filter { it.startsWith("BOARD")  }
+
+    iter(titlesSequenceTerminal)
+
+}
+
+fun iter(seq: Sequence<String>){
+    for (t in seq) println(t)
 }
 
 class Meeting2(val id: Int, val title: String){
