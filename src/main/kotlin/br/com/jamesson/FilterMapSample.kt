@@ -1,5 +1,7 @@
 package br.com.jamesson
 
+import java.util.stream.Collector
+
 fun main() {
     val ints = listOf(1,2,3,4,5)
 
@@ -26,6 +28,14 @@ fun main() {
                                 .filter { it -> it.title.startsWith("C")  }
                                 .map { m -> m.title }
     for (t in titles) println(t)
+
+    // USE SEQUENCE "asSequence" (PARA TRABALHAR COM GRANDE VOLUME DE DADOS NAS LISTAS)
+    // USANDO SEQUENCE A LISTA FICA LAZY, APENAS QUANDO É NECESSARIO ELA É PROCESSADA
+    val titlesSequence = meetings
+        .asSequence()
+        .filter { println("filter($it)"); it.title.endsWith("g")  }
+        .map { println("map($it"); it.title }
+    for (t in titlesSequence) println(t)
 
 }
 
