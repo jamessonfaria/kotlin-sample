@@ -41,6 +41,10 @@ fun main() {
     // OTIMIZANDO O PROCESSO, COMO AS SEQUENCIAS SAO LAZY, PODEMOS ARMAZENAR
     // A FUNCAO DE ALTA ORDEM E PASSAR ELA COMO PARAMETRO PARA UMA FUNCAO
     // QUANDO FOR SER EXECUTAR
+
+    // OBS.: SEQUENCE SAO COMO STREAMS, SO QUE COMO O JAVA NO ANDROID POR
+    // EXEMPLO NAO PERMITE STREAMS, O KOTLIN COM SEQUENCE PERMITE O SEU
+    // USO EM DIVERSOS LUGARES
     println("-----------------------------------------------------------")
     val titlesSequenceTerminal = meetings
         .asSequence()
