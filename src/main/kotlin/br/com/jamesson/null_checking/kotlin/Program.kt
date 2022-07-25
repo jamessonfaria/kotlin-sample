@@ -31,6 +31,9 @@ fun closeMeeting(m: Meeting?): Boolean? {
 
 class Meeting {
     val canClose: Boolean = false
+    // PARA NAO TER QUE INICIALIZAR A VARIAVEL NA DECLARACAO, OU FORCAR ELA INICIA NULL,
+    // USA-SE O lateinit QUE PROMETE AO COMPILADOR QUE IRA INICIALIZAR ANTES DE USAR
+    lateinit var address: Address
 
     fun close(): Boolean {
         return true
@@ -40,10 +43,17 @@ class Meeting {
         //as? VERIFICA SE O OBJETO É DAQUELE TIPO, CASO NAO FOR SETA O VALOR NULL
         val saveable = o as? ISaveable
         saveable?.save()
+    }
 
+    fun init(addr: Address){
+        address = addr
     }
 }
 
 interface ISaveable {
     fun save()
+}
+
+class Address {
+
 }
