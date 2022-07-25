@@ -1,5 +1,6 @@
 package br.com.jamesson.nullability.kotlin
 
+import br.com.jamesson.nullability.java.Address
 import br.com.jamesson.nullability.java.Meeting
 
 fun main() {
@@ -14,4 +15,16 @@ fun main() {
     val title2: String = m.titleCanBeNull() ?: "nobody"
     println(title2)
 
+}
+
+class HomeAddress : Address {
+    override fun getFirstAddress(): String {
+        return ""
+    }
+}
+
+class WorkAddress : Address {
+    override fun getFirstAddress(): String?{
+        return ""
+    }
 }
