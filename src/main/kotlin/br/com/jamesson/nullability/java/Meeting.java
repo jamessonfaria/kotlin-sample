@@ -19,4 +19,8 @@ public class Meeting {
         return this.title;
     }
 
+    public String titleCanBeNull(){
+        return title;
+    }
+
 }

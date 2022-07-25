@@ -5,10 +5,13 @@ import br.com.jamesson.nullability.java.Meeting
 fun main() {
 
     val m = Meeting()
-    m.addTitle("Title")
+    // m.addTitle("Title")
     // m.addTitle(null)
-    val title: String? = m.meetingTitle()
+    // val title: String? = m.meetingTitle()
 
-    println(title)
+    // println(title)
+
+    val title2: String = m.titleCanBeNull() ?: "nobody"
+    println(title2)
 
 }
