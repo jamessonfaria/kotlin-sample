@@ -8,6 +8,16 @@ fun main() {
     newMeeting = m ?: Meeting()
     println(closeMeeting(m))
     println(closeMeeting(newMeeting))
+
+    // O LET SO SERA CHAMADO SE O M NAO FOR NULO
+    m?.let {
+        closeMeetingNonNull(m)
+    }
+}
+
+fun closeMeetingNonNull(m: Meeting): Boolean? {
+    return if (m.canClose) m.close()
+    else false
 }
 
 fun closeMeeting(m: Meeting?): Boolean? {
